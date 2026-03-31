@@ -10,14 +10,20 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -137,4 +143,101 @@ fun LoginScreen() {
             )
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun OutlineButtonExample() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(24.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        OutlinedButton(
+            onClick = { /* Handle click */ },
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(55.dp),
+            shape = CircleShape,
+            border = BorderStroke(1.dp, Color.Gray),
+            colors = ButtonDefaults.outlinedButtonColors(
+                contentColor = Color.Black
+            )
+        ) {
+            Text(
+                text = "Click Me!",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Medium
+            )
+        }
+    }
+}
+
+
+@Preview(showBackground = true,showSystemUi = true)
+@Composable
+private fun TextButtonExample() {
+    val context = LocalContext.current
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        modifier = Modifier.fillMaxSize()
+    ){
+        TextButton(
+            onClick = { Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show() } ,
+            modifier = Modifier.fillMaxWidth(0.5f),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.Cyan ,
+                contentColor = Color.DarkGray
+            ),
+            shape= RoundedCornerShape(8.dp),
+            elevation = ButtonDefaults.buttonElevation(
+                defaultElevation = 10.dp
+            ),
+        ) {
+            Row(
+                modifier=Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center ,
+                verticalAlignment = Alignment.CenterVertically
+            ){
+                Icon(
+                    imageVector = Icons.Default.KeyboardArrowRight,
+                    contentDescription = "Icon",
+                )
+
+                Text(
+                    text = "Click Me",
+                    fontWeight = FontWeight.Bold
+                )
+            }
+        }
+    }
+}
+
+@Preview(showBackground = true,showSystemUi = true)
+@Composable
+private fun IconButtonExample() {
+    val context = LocalContext.current
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        modifier = Modifier.fillMaxSize()
+    ){
+        IconButton(onClick = {
+            Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+
+        }){
+            Icon(
+                imageVector = Icons.Default.Home,
+                contentDescription = "Go to home",
+                tint = Color.Black,
+                modifier = Modifier.size(50.dp)
+            )
+        }
+    }
+
+
 }
