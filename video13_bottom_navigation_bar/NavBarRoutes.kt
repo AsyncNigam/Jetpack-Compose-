@@ -1,4 +1,4 @@
-package com.nigdroid.jetpackcompose.jetpackCompose.video13_navigation_bar
+package com.nigdroid.jetpackcompose.jetpackCompose.video13_bottom_navigation_bar
 
 import kotlinx.serialization.Serializable
 

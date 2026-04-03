@@ -1,4 +1,4 @@
-package com.nigdroid.jetpackcompose.jetpackCompose.video13_navigation_bar
+package com.nigdroid.jetpackcompose.jetpackCompose.video13_bottom_navigation_bar
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,10 +14,10 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
 @Composable
-fun NavBarSearchScreen(navController: NavHostController) {
+fun NavBarNotificationScreen(navController: NavHostController) {
 
     Scaffold(
-        bottomBar = { MyNavBar(navController, "Search") }
+        bottomBar = { MyNavBar(navController, "Notifications") }
     ) { innerPadding ->
 
         Column(
@@ -29,7 +29,7 @@ fun NavBarSearchScreen(navController: NavHostController) {
         ) {
 
             Text(
-                text = "Search Screen",
+                text = "Notifications Screen",
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Bold
             )

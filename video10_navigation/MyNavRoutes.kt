@@ -1,4 +1,4 @@
-package com.nigdroid.jetpackcompose.jetpackCompose.video10
+package com.nigdroid.jetpackcompose.jetpackCompose.video10_navigation
 
 import kotlinx.serialization.Serializable
 

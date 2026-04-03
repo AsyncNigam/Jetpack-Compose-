@@ -1,4 +1,4 @@
-package com.nigdroid.jetpackcompose.jetpackCompose.video10
+package com.nigdroid.jetpackcompose.jetpackCompose.video10_navigation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,19 +20,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
+
+
 @Composable
-fun WelcomeScreenUI(userName: String, navController: NavHostController) {
+fun HomeScreenUI(navController: NavHostController) {
 
     Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(horizontal = 16.dp),
+        modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
 
         Text(
-            text = "Welcome $userName!",
+            text = "Home Screen",
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold
         )
